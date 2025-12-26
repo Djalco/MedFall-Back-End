@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: fr._il.MedFall.MedFallApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.531 s -- in fr._il.MedFall.MedFallApplicationTests
