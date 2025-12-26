@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de changement d'adresse email</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+        }
+
+        .reset-code {
+            font-size: 24px;
+            font-weight: 700;
+            color: #F83E3F;
+            background-color: #fff5f5;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 5px;
+            margin: 20px auto;
+            letter-spacing: 4px;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            color: #856404;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #777;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #F83E3F;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .reset-code {
+                font-size: 22px;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <!-- Logo -->
+<!--    <div class="logo">-->
+<!--        <img src="https://files-brillo-jewelry.s3.eu-west-3.amazonaws.com/logo.png" alt="SCDM Logo">-->
+<!--    </div>-->
+
+    <!-- Email Content -->
+    <div class="content">
+        <p>Bonjour <strong th:text="${greeting}">Utilisateur</strong>,</p>
+        <p th:text="${reset_msg}">Vous avez demandé la modification de votre adresse e-mail. Veuillez utiliser le code ci-dessous pour confirmer votre nouvelle adresse et sécuriser votre compte :</p>
+
+        <!-- Reset Code -->
+        <div class="reset-code" th:text="${reset_code}">123456</div>
+
+        <div class="warning">
+            <strong>⚠️ Attention :</strong>
+            <p>Ce code est valable pendant <strong>15 minutes</strong> uniquement.</p>
+            <p>Si vous n'êtes pas à l'origine de cette demande, veuillez ignorer cet e-mail et contacter immédiatement notre support.</p>
+        </div>
+
+        <p>Cordialement,</p>
+        <p><strong>L'équipe MedFall</strong></p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Besoin d'aide ? <a href="mailto:support@medfall.fr">Contactez-nous</a></p>
+        <p>© <span th:text="${currentYear}">2025</span> MedFall - Tous droits réservés</p>
+    </div>
+</div>
+</body>
+</html>
